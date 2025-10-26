@@ -1,28 +1,24 @@
-import { useState } from 'react'
+import React from 'react'
+import Hero from './components/Hero'
+import Timeline from './components/Timeline'
+import SeriesGrid from './components/SeriesGrid'
+import ModelIndex from './components/ModelIndex'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-neutral-950 text-neutral-100">
+      <Hero />
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Timeline />
+        <SeriesGrid />
+        <ModelIndex />
+      </main>
+      <footer className="mt-20 border-t border-neutral-800/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-neutral-400 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+          <p>Unofficial educational overview. Specs are summarized; verify locally for exact figures.</p>
+          <p>© {new Date().getFullYear()} BMW History Showcase</p>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
-
-export default App
